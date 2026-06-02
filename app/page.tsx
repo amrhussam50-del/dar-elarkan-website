@@ -301,6 +301,26 @@ export default function Home() {
             </div>
           </div>
         </div>
+        {/* Location Map */}
+        <section className="py-20 bg-white px-6">
+          <div className="max-w-7xl mx-auto">
+            <h2 className="text-4xl font-bold text-center text-blue-900 mb-4">
+              خريطة بيت الوطن
+            </h2>
+
+            <p className="text-center text-gray-600 mb-10">
+              مواقع المشروعات الحالية لشركة دار الأركان للتطوير العقاري
+            </p>
+
+            <div className="rounded-3xl overflow-hidden shadow-2xl">
+              <img
+                src="/bait-elwatan-map.jpg"
+                alt="خريطة بيت الوطن"
+                className="w-full"
+              />
+            </div>
+          </div>
+        </section>
       </section>
       <section className="py-20 bg-blue-900 text-white">
         <div className="max-w-4xl mx-auto px-6 text-center">
