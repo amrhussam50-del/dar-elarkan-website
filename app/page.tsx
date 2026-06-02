@@ -302,21 +302,116 @@ export default function Home() {
           </div>
         </div>
         {/* Location Map */}
-        <section className="py-20 bg-white px-6">
-          <div className="max-w-7xl mx-auto">
+        <section className="py-20 bg-white">
+          <div className="max-w-7xl mx-auto px-6">
             <h2 className="text-4xl font-bold text-center text-blue-900 mb-4">
               خريطة بيت الوطن
             </h2>
 
             <p className="text-center text-gray-600 mb-10">
-              مواقع المشروعات الحالية لشركة دار الأركان للتطوير العقاري
+              اضغط على أي حي لمعرفة المشاريع المتاحة
             </p>
 
-            <div className="rounded-3xl overflow-hidden shadow-2xl">
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl">
               <img
                 src="/bait-elwatan-map.jpg"
                 alt="خريطة بيت الوطن"
                 className="w-full"
+              />
+              {/* الحي الأول */}
+              <a
+                href="#hay1"
+                className="absolute border-4 border-red-500 hover:bg-red-500/20 transition"
+                style={{
+                  top: "22%",
+                  left: "28%",
+                  width: "9%",
+                  height: "8%",
+                }}
+              />
+
+              {/* الحي الثاني */}
+              <a
+                href="#hay2"
+                className="absolute border-4 border-yellow-500 hover:bg-yellow-500/20 transition"
+                style={{
+                  top: "33%",
+                  left: "24%",
+                  width: "8%",
+                  height: "7%",
+                }}
+              />
+
+              {/* الحي الثالث */}
+              <a
+                href="#hay3"
+                className="absolute border-4 border-blue-500 hover:bg-blue-500/20 transition"
+                style={{
+                  top: "39%",
+                  left: "58%",
+                  width: "10%",
+                  height: "8%",
+                }}
+              />
+
+              {/* الحي الرابع */}
+              <a
+                href="#hay4"
+                className="absolute border-4 border-purple-500 hover:bg-purple-500/20 transition"
+                style={{
+                  top: "56%",
+                  left: "38%",
+                  width: "8%",
+                  height: "7%",
+                }}
+              />
+
+              {/* الحي الخامس */}
+              <a
+                href="#hay5"
+                className="absolute border-4 border-green-500 hover:bg-green-500/20 transition"
+                style={{
+                  top: "67%",
+                  left: "57%",
+                  width: "10%",
+                  height: "8%",
+                }}
+              />
+
+              {/* الحي السادس */}
+              <a
+                href="#hay6"
+                className="absolute border-4 border-orange-500 hover:bg-orange-500/20 transition"
+                style={{
+                  top: "79%",
+                  left: "43%",
+                  width: "8%",
+                  height: "7%",
+                }}
+              />
+
+              {/* الحي السابع */}
+              <a
+                href="#hay7"
+                className="absolute border-4 border-teal-500 hover:bg-teal-500/20 transition"
+                style={{
+                  top: "69%",
+                  left: "64%",
+                  width: "10%",
+                  height: "10%",
+                }}
+              />
+
+              {/* الحي الثامن */}
+              <a
+                href="#hay8"
+                className="absolute border-4 border-pink-500 hover:bg-pink-500/20 transition"
+                style={{
+                  top: "82%",
+                  left: "58%",
+                  width: "8%",
+                  height: "7%",
+                }}
               />
             </div>
           </div>
