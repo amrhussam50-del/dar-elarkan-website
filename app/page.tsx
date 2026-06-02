@@ -16,29 +16,39 @@ export default function Home() {
         </div>
       </nav>
       {/* Hero */}
-      <section className="flex flex-col items-center justify-center text-center px-6 py-20">
-        <Image src="/logo.png" alt="DAR EL ARKAN" width={180} height={180} />
+      {/* Hero */}
+      <section className="hero-bg min-h-screen flex items-center justify-center text-center px-6">
+        <div className="max-w-4xl text-white">
+          <h1 className="text-4xl md:text-7xl font-bold leading-tight">
+            DAR EL ARKAN
+          </h1>
 
-        <h1 className="text-5xl md:text-7xl font-bold text-blue-900 mt-8">
-          DAR EL ARKAN
-        </h1>
+          <h2 className="text-2xl md:text-4xl mt-4 text-amber-400 font-semibold">
+            DEVELOPMENTS
+          </h2>
 
-        <h2 className="text-3xl md:text-5xl text-amber-600 mt-2">
-          DEVELOPMENTS
-        </h2>
+          <p className="mt-8 text-lg md:text-2xl leading-9">
+            نبني قيمة حقيقية ونطور مجتمعات تدوم
+            <br />
+            أكثر من 11 عاماً من الخبرة في التطوير العقاري
+          </p>
 
-        <p className="mt-8 text-xl text-gray-600">
-          نبني قيمة حقيقية ... ونطور مجتمعات تدوم
-        </p>
+          <div className="flex flex-col md:flex-row justify-center gap-4 mt-10">
+            <a
+              href="https://wa.me/201152722626"
+              target="_blank"
+              className="bg-green-600 hover:bg-green-700 px-8 py-4 rounded-xl text-lg font-bold"
+            >
+              تواصل واتساب
+            </a>
 
-        <div className="flex justify-center gap-4 mt-10">
-          <button className="bg-blue-900 text-white px-8 py-4 rounded-xl">
-            المشاريع الحالية
-          </button>
-
-          <button className="border border-blue-900 text-blue-900 px-8 py-4 rounded-xl">
-            تواصل معنا
-          </button>
+            <a
+              href="#projects"
+              className="bg-blue-900 hover:bg-blue-800 px-8 py-4 rounded-xl text-lg font-bold"
+            >
+              المشاريع الحالية
+            </a>
+          </div>
         </div>
       </section>
       {/* About Us */}
@@ -56,7 +66,8 @@ export default function Home() {
         </div>
       </section>
       {/* Statistics */}
-      <section className="py-20 bg-gray-100 px-6">
+      <section id="projects" className="py-20 bg-gray-100 px-6">
+        {" "}
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl font-bold text-center text-blue-900 mb-12">
             المشاريع الحالية
