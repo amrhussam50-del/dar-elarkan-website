@@ -323,10 +323,10 @@ export default function Home() {
                 href="#hay1"
                 className="absolute border-4 border-red-500 hover:bg-red-500/20 transition"
                 style={{
-                  top: "22%",
-                  left: "28%",
-                  width: "9%",
-                  height: "8%",
+                  top: "52%",
+                  left: "42%",
+                  width: "5%",
+                  height: "4%",
                 }}
               />
 
@@ -335,9 +335,9 @@ export default function Home() {
                 href="#hay2"
                 className="absolute border-4 border-yellow-500 hover:bg-yellow-500/20 transition"
                 style={{
-                  top: "33%",
-                  left: "24%",
-                  width: "8%",
+                  top: "37%",
+                  left: "31%",
+                  width: "9%",
                   height: "7%",
                 }}
               />
@@ -347,10 +347,10 @@ export default function Home() {
                 href="#hay3"
                 className="absolute border-4 border-blue-500 hover:bg-blue-500/20 transition"
                 style={{
-                  top: "39%",
-                  left: "58%",
-                  width: "10%",
-                  height: "8%",
+                  top: "67%",
+                  left: "52%",
+                  width: "7%",
+                  height: "5%",
                 }}
               />
 
@@ -371,10 +371,10 @@ export default function Home() {
                 href="#hay5"
                 className="absolute border-4 border-green-500 hover:bg-green-500/20 transition"
                 style={{
-                  top: "67%",
+                  top: "75%",
                   left: "57%",
-                  width: "10%",
-                  height: "8%",
+                  width: "6%",
+                  height: "5%",
                 }}
               />
 
