@@ -75,7 +75,7 @@ export default function Home() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* A187 */}
-            <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
+            <div className="bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
               <img
                 src="/a187.jpg"
                 alt="A187"
@@ -115,7 +115,7 @@ export default function Home() {
             </div>
 
             {/* C87 */}
-            <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
+            <div className="bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
               <img
                 src="/c87.jpg"
                 alt="C87"
@@ -155,7 +155,7 @@ export default function Home() {
             </div>
 
             {/* A61 */}
-            <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
+            <div className="bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
               <img
                 src="/a61.jpg"
                 alt="A61"
@@ -195,7 +195,7 @@ export default function Home() {
             </div>
 
             {/* G30 */}
-            <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
+            <div className="bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
               <img
                 src="/g30.jpg"
                 alt="G30"
@@ -235,7 +235,7 @@ export default function Home() {
             </div>
 
             {/* D80 */}
-            <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
+            <div className="bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
               <img
                 src="/d80.jpg"
                 alt="D80"
@@ -349,7 +349,35 @@ export default function Home() {
               واتساب
             </a>
           </div>
+          <div className="flex justify-center gap-4 mt-6 flex-wrap">
+            <a
+              href="https://www.facebook.com/share/1ERhNoSSSn/"
+              target="_blank"
+              className="bg-blue-600 text-white px-5 py-3 rounded-xl shadow-lg hover:scale-105 transition-all"
+            >
+              📘 Facebook
+            </a>
 
+            <a
+              href="https://www.instagram.com/dar_el_arkan?igsh=MWZjY29zNHFydGRmYQ=="
+              target="_blank"
+              className="bg-pink-600 text-white px-5 py-3 rounded-xl shadow-lg hover:scale-105 transition-all"
+            >
+              📷 Instagram
+            </a>
+
+            <a
+              href="https://www.tiktok.com/@darelarkandevelopment?_r=1&_t=ZS-96s4z36VhTR"
+              target="_blank"
+              className="bg-black text-white px-5 py-3 rounded-xl shadow-lg hover:scale-105 transition-all"
+            >
+              🎵 TikTok
+            </a>
+          </div>
+
+          <p className="mt-4 text-gray-400">
+            تابع أحدث المشاريع والعروض الحصرية على منصات التواصل الاجتماعي
+          </p>
           <p className="mt-8 text-sm text-gray-500">
             © 2026 DAR EL ARKAN DEVELOPMENTS. All Rights Reserved.
           </p>
