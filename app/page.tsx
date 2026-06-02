@@ -313,107 +313,98 @@ export default function Home() {
             </p>
 
             <div className="relative rounded-3xl overflow-hidden shadow-2xl">
-              <img
-                src="/bait-elwatan-map.jpg"
-                alt="خريطة بيت الوطن"
-                className="w-full"
-              />
-              {/* الحي الأول */}
-              <a
-                href="#hay1"
-                className="absolute border-4 border-red-500 hover:bg-red-500/20 transition"
-                style={{
-                  top: "52%",
-                  left: "42%",
-                  width: "5%",
-                  height: "4%",
-                }}
-              />
+  <img
+    src="/bait-elwatan-map.jpg"
+    alt="خريطة بيت الوطن"
+    className="w-full"
+  />
 
-              {/* الحي الثاني */}
-              <a
-                href="#hay2"
-                className="absolute border-4 border-yellow-500 hover:bg-yellow-500/20 transition"
-                style={{
-                  top: "37%",
-                  left: "31%",
-                  width: "9%",
-                  height: "7%",
-                }}
-              />
+  <svg
+    className="absolute inset-0 w-full h-full"
+    viewBox="0 0 7680 10867"
+    preserveAspectRatio="xMidYMid meet"
+  >
+    {/* الحي الأول */}
+    <a href="/hay1">
+      <polygon
+        points="2650,4220,2860,5390,2800,5540,2360,5330,2060,5070,1670,4480"
+        fill="transparent"
+        stroke="rgba(255,0,0,.7)"
+        strokeWidth="20"
+      />
+    </a>
 
-              {/* الحي الثالث */}
-              <a
-                href="#hay3"
-                className="absolute border-4 border-blue-500 hover:bg-blue-500/20 transition"
-                style={{
-                  top: "67%",
-                  left: "52%",
-                  width: "7%",
-                  height: "5%",
-                }}
-              />
+    {/* الحي الثاني */}
+    <a href="/hay2">
+      <polygon
+        points="1900,5170,2230,5550,2770,6050,1840,6710,1480,6190,1040,5570,1110,5330"
+        fill="transparent"
+        stroke="rgba(255,165,0,.7)"
+        strokeWidth="20"
+      />
+    </a>
 
-              {/* الحي الرابع */}
-              <a
-                href="#hay4"
-                className="absolute border-4 border-purple-500 hover:bg-purple-500/20 transition"
-                style={{
-                  top: "56%",
-                  left: "38%",
-                  width: "8%",
-                  height: "7%",
-                }}
-              />
+    {/* الحي الثالث */}
+    <a href="/hay3">
+      <polygon
+        points="4150,5180,4550,6080,3750,6380,3500,6030,3200,5730,3350,5430"
+        fill="transparent"
+        stroke="rgba(0,102,255,.7)"
+        strokeWidth="20"
+      />
+    </a>
 
-              {/* الحي الخامس */}
-              <a
-                href="#hay5"
-                className="absolute border-4 border-green-500 hover:bg-green-500/20 transition"
-                style={{
-                  top: "75%",
-                  left: "57%",
-                  width: "6%",
-                  height: "5%",
-                }}
-              />
+    {/* الحي الرابع */}
+    <a href="/hay4">
+      <polygon
+        points="2977,6080,3262,6532,3382,6965,3437,7462,3382,7793,2875,7766,2406,7839,1991,6780"
+        fill="transparent"
+        stroke="rgba(128,0,255,.7)"
+        strokeWidth="20"
+      />
+    </a>
 
-              {/* الحي السادس */}
-              <a
-                href="#hay6"
-                className="absolute border-4 border-orange-500 hover:bg-orange-500/20 transition"
-                style={{
-                  top: "79%",
-                  left: "43%",
-                  width: "8%",
-                  height: "7%",
-                }}
-              />
+    {/* الحي الخامس */}
+    <a href="/hay5">
+      <polygon
+        points="4697,6073,5103,6957,4651,7270,3998,7731,3823,7390,3823,6948,3804,6607,3777,6450"
+        fill="transparent"
+        stroke="rgba(0,180,0,.7)"
+        strokeWidth="20"
+      />
+    </a>
 
-              {/* الحي السابع */}
-              <a
-                href="#hay7"
-                className="absolute border-4 border-teal-500 hover:bg-teal-500/20 transition"
-                style={{
-                  top: "69%",
-                  left: "64%",
-                  width: "10%",
-                  height: "10%",
-                }}
-              />
+    {/* الحي السادس */}
+    <a href="/hay6">
+      <polygon
+        points="2855,7916,3371,7907,3445,8165,3546,8293,3491,8883,2533,8892,2377,7980"
+        fill="transparent"
+        stroke="rgba(255,100,0,.7)"
+        strokeWidth="20"
+      />
+    </a>
 
-              {/* الحي الثامن */}
-              <a
-                href="#hay8"
-                className="absolute border-4 border-pink-500 hover:bg-pink-500/20 transition"
-                style={{
-                  top: "82%",
-                  left: "58%",
-                  width: "8%",
-                  height: "7%",
-                }}
-              />
-            </div>
+    {/* الحي السابع */}
+    <a href="/hay7">
+      <polygon
+        points="5110,7050,5580,7339,5313,7817,5064,8324,4539,8140,4263,8029,3996,7808"
+        fill="transparent"
+        stroke="rgba(255,0,128,.7)"
+        strokeWidth="20"
+      />
+    </a>
+
+    {/* الحي الثامن */}
+    <a href="/hay8">
+      <polygon
+        points="3724,8305,4212,8296,4774,8397,5105,8498,4847,9060,4534,8931,4120,8913,3668,8894"
+        fill="transparent"
+        stroke="rgba(0,200,255,.7)"
+        strokeWidth="20"
+      />
+    </a>
+  </svg>
+</div>
           </div>
         </section>
       </section>
