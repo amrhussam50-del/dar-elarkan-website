@@ -19,27 +19,24 @@ export default async function DistrictPage({
     return (
         <div className="max-w-5xl mx-auto p-8">
       
-          <h1 className="text-4xl font-bold mb-6 text-center">
+          <h1 className="text-4xl font-bold mb-6 text-center text-blue-900">
             {districts[district] || district}
           </h1>
       
-          <p className="text-center mb-10">
-            صفحة الحي
-          </p>
-      
+         
           {noProjects.includes(district) && (
-            <div className="bg-yellow-50 border border-yellow-300 rounded-xl p-6 mb-8 text-center">
-              <h2 className="text-2xl font-bold text-yellow-700 mb-3">
-                لا توجد مشروعات متاحة حالياً
-              </h2>
-      
-              <p className="text-gray-700">
-                اترك بياناتك وسنقوم بالتواصل معك فور إضافة مشروعات جديدة في هذا الحي.
-              </p>
-            </div>
+           <div className="bg-yellow-50 border border-yellow-300 rounded-2xl p-8 mb-10 text-center">
+           <h2 className="text-3xl font-bold text-yellow-700 mb-4">
+             لا توجد مشروعات متاحة حالياً
+           </h2>
+         
+           <p className="text-gray-700 text-lg">
+             اترك بياناتك وسنقوم بالتواصل معك فور إضافة مشروعات جديدة في هذا الحي.
+           </p>
+         </div>
           )}
       <div className="bg-white shadow-lg rounded-xl p-8 mt-10">
-  <h2 className="text-2xl font-bold mb-6 text-center">
+  <h2 className="text-3xl font-bold text-blue-900 text-center mb-6">
     اترك استفسارك
   </h2>
 
@@ -48,29 +45,36 @@ export default async function DistrictPage({
   method="POST"
   className="space-y-4"
 >
-    <input
-      type="text"
-      placeholder="الاسم بالكامل"
-      className="w-full border rounded-lg p-3"
-    />
+<input
+  type="text"
+  name="name"
+  placeholder="الاسم بالكامل"
+  required
+  className="w-full border rounded-lg p-3 text-gray-900 placeholder-gray-500"
+/>
 
-    <input
-      type="tel"
-      placeholder="رقم الهاتف"
-      className="w-full border rounded-lg p-3"
-    />
+<input
+  type="tel"
+  name="phone"
+  placeholder="رقم الهاتف"
+  required
+  className="w-full border rounded-lg p-3 text-gray-900 placeholder-gray-500"
+/>
 
-    <input
-      type="email"
-      placeholder="البريد الإلكتروني (اختياري)"
-      className="w-full border rounded-lg p-3"
-    />
+<input
+  type="email"
+  name="email"
+  placeholder="البريد الإلكتروني (اختياري)"
+  className="w-full border rounded-lg p-3 text-gray-900 placeholder-gray-500"
+/>
 
-    <textarea
-      placeholder="اكتب استفسارك هنا"
-      rows={5}
-      className="w-full border rounded-lg p-3"
-    ></textarea>
+<textarea
+  name="message"
+  placeholder="اكتب استفسارك هنا"
+  rows={5}
+  required
+  className="w-full border rounded-lg p-3 text-gray-900 placeholder-gray-500"
+></textarea>
 <input
   type="hidden"
   name="_subject"
