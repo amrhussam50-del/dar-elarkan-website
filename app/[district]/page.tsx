@@ -78,13 +78,7 @@ export default async function DistrictPage({
   </p>
 </div>
 
-      <a
-        href={`https://wa.me/201152722626?text=مرحباً، أريد الاستفسار عن مشروع ${projects[district]}`}
-        target="_blank"
-        className="inline-block mt-5 bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700"
-      >
-        استفسر الآن
-      </a>
+     
   </div>
 )}
          
