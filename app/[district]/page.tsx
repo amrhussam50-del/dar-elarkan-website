@@ -32,39 +32,68 @@ export default async function DistrictPage({
     };
     const projectDetails: Record<string, any> = {
         hay1: {
-          downPayment: "30%",
-          installment: "5 سنوات",
-          delivery: "سنة",
-          areas: ["شقة 180م", "شقة 200م", "شقة 220م"]
-        },
+            pricePerMeter: "24,000 جنيه",
+            downPayment: "30%",
+            installment: "5 سنوات",
+            delivery: "سنة و نصف",
+            areas: ["شقة 180م", "شقة 200م", "شقة 220م"],
+            features: [
+              "دقيقة من التسعين الشمالي",
+              "دخلة مباشرة من طريق السويس",
+              "مواجهة مباشرة لكمبوند هليو بارك"
+            ]
+          },
       
-        hay2: {
-          downPayment: "30%",
-          installment: "5 سنوات",
-          delivery: "سنة",
-          areas: ["شقة 190م", "شقة 210م"]
-        },
+          hay2: {
+            pricePerMeter: "24,000 جنيه",
+            downPayment: "30%",
+            installment: "5 سنوات",
+            delivery: "سنة و نسف",
+            areas: ["شقة 190م", "شقة 210م"],
+            features: [
+              "ثالث نمرة من التسعين الشمالي",
+              "قريبة من النادي الأهلي",
+              "واجهة مميزة على شارع واسع"
+            ]
+          },
       
-        hay4: {
-          downPayment: "30%",
-          installment: "5 سنوات",
-          delivery: "سنة",
-          areas: ["شقة 175م", "شقة 195م"]
-        },
+          hay4: {
+            pricePerMeter: "24,000 جنيه",
+            downPayment: "30%",
+            installment: "5 سنوات",
+            delivery: "سنة ",
+            areas: ["شقة 175م", "شقة 195م"],
+            features: [
+              "قريبة من الخدمات الرئيسية",
+              "موقع مميز داخل الحي",
+              "فيو مفتوح"
+            ]
+          },
+          hay6: {
+            pricePerMeter: "24,000 جنيه",
+            downPayment: "30%",
+            installment: "5 سنوات",
+            delivery: "سنتين",
+            areas: ["شقة 180م", "شقة 230م"],
+            features: [
+              "قريبة من محور بن زايد",
+              "واجهة بحرية",
+              "قريبة من مناطق الخدمات"
+            ]
+          },
       
-        hay6: {
-          downPayment: "30%",
-          installment: "5 سنوات",
-          delivery: "سنة",
-          areas: ["شقة 180م", "شقة 230م"]
-        },
-      
-        hay8: {
-          downPayment: "30%",
-          installment: "5 سنوات",
-          delivery: "سنة",
-          areas: ["شقة 185م", "شقة 205م"]
-        }
+          hay8: {
+            pricePerMeter: "24,000 جنيه",
+            downPayment: "30%",
+            installment: "5 سنوات",
+            delivery: "سنة و نصف",
+            areas: ["شقة 185م", "شقة 205م"],
+            features: [
+              "أرقى مواقع الحي الثامن",
+              "قريبة من الخدمات",
+              "تصميم معماري مميز"
+            ]
+          },
       };
     return (
         <div className="bg-white shadow-xl rounded-2xl p-8 border border-gray-200">
@@ -78,14 +107,16 @@ export default async function DistrictPage({
     <h2 className="text-3xl font-bold text-blue-900 mb-4">
       المشاريع المتاحة حالياً
     </h2>
-
-    <Image
-  src={projectImages[district]}
-  alt={projects[district]}
-  width={600}
-  height={400}
-  className="w-full h-64 object-cover rounded-lg mb-4"
-/>
+    <div className="flex justify-center mb-6">
+  <Image
+    src={projectImages[district]}
+    alt={projects[district]}
+    width={700}
+    height={500}
+    className="rounded-xl shadow-lg object-contain max-h-[450px] w-auto"
+  />
+</div>
+/
 
 <h3 className="text-3xl font-bold text-blue-800">
   {projects[district]}
@@ -105,14 +136,40 @@ export default async function DistrictPage({
   {" "}وتقسيط حتى{" "}
   {projectDetails[district].installment}
 </p>
-
+<p className="text-blue-700 font-bold mt-2">
+  سعر المتر: {projectDetails[district].pricePerMeter}
+</p>
 <p className="text-gray-700">
   استلام خلال {projectDetails[district].delivery}
 </p>
+<div className="bg-white border-2 border-blue-100 rounded-xl p-5 mt-6">
+  <h4 className="font-bold text-blue-900 text-xl mb-4">
+    📐 المساحات المتاحة
+  </h4>
 
-  <p className="text-gray-700">
-    فيو مفتوح وقريب من جميع الخدمات
-  </p>
+  <div className="flex flex-wrap gap-3 justify-center">
+    {projectDetails[district].areas.map((area, index) => (
+      <div
+        key={index}
+        className="bg-blue-50 border border-blue-200 px-4 py-2 rounded-lg font-bold text-blue-900"
+      >
+        {area}
+      </div>
+    ))}
+  </div>
+</div>
+<div className="mt-4">
+  {projectDetails[district].features.map(
+    (feature, index) => (
+      <p
+        key={index}
+        className="text-gray-700"
+      >
+        ✓ {feature}
+      </p>
+    )
+  )}
+</div>
 </div>
 
      
