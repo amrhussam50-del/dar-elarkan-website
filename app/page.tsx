@@ -325,84 +325,98 @@ export default function Home() {
     preserveAspectRatio="xMidYMid meet"
   >
     {/* الحي الأول */}
-    <a href="/hay1">
+    <a href="/hay1">  <title>الحي الأول</title>
       <polygon
         points="2650,4220,2860,5390,2800,5540,2360,5330,2060,5070,1670,4480"
         fill="transparent"
-        stroke="rgba(255,0,0,.7)"
+        stroke="transparent"
         strokeWidth="20"
+        className="district"
       />
     </a>
 
     {/* الحي الثاني */}
     <a href="/hay2">
-      <polygon
-        points="1900,5170,2230,5550,2770,6050,1840,6710,1480,6190,1040,5570,1110,5330"
-        fill="transparent"
-        stroke="rgba(255,165,0,.7)"
-        strokeWidth="20"
-      />
-    </a>
+  <title>الحي الثاني</title>
+  <polygon
+    points="1900,5170,2230,5550,2770,6050,1840,6710,1480,6190,1040,5570,1110,5330"
+    fill="transparent"
+    stroke="transparent"
+    strokeWidth="20"
+    className="district"
+  />
+</a>
 
     {/* الحي الثالث */}
-    <a href="/hay3">
+    <a href="/hay3">   <title>الحي الثالث</title>
       <polygon
         points="4150,5180,4550,6080,3750,6380,3500,6030,3200,5730,3350,5430"
         fill="transparent"
-        stroke="rgba(0,102,255,.7)"
+        stroke="transparent"
         strokeWidth="20"
+        className="district"
       />
     </a>
+    
 
     {/* الحي الرابع */}
-    <a href="/hay4">
+    <a href="/hay4"> <title>الحي الرابع</title>
       <polygon
         points="2977,6080,3262,6532,3382,6965,3437,7462,3382,7793,2875,7766,2406,7839,1991,6780"
         fill="transparent"
-        stroke="rgba(128,0,255,.7)"
+        stroke="transparent"
         strokeWidth="20"
+        className="district"
       />
     </a>
+    
 
     {/* الحي الخامس */}
-    <a href="/hay5">
+    <a href="/hay5">  <title>الحي الخامس</title>
       <polygon
         points="4697,6073,5103,6957,4651,7270,3998,7731,3823,7390,3823,6948,3804,6607,3777,6450"
         fill="transparent"
-        stroke="rgba(0,180,0,.7)"
+        stroke="transparent"
         strokeWidth="20"
+        className="district"
       />
     </a>
-
+    
     {/* الحي السادس */}
-    <a href="/hay6">
+    <a href="/hay6">  <title>الحي السادس</title>
       <polygon
         points="2855,7916,3371,7907,3445,8165,3546,8293,3491,8883,2533,8892,2377,7980"
         fill="transparent"
-        stroke="rgba(255,100,0,.7)"
+        stroke="transparent"
         strokeWidth="20"
+        className="district"
       />
     </a>
+    
 
     {/* الحي السابع */}
-    <a href="/hay7">
+    <a href="/hay7">  <title>الحي السابع</title>
       <polygon
         points="5110,7050,5580,7339,5313,7817,5064,8324,4539,8140,4263,8029,3996,7808"
         fill="transparent"
-        stroke="rgba(255,0,128,.7)"
+        stroke="transparent"
         strokeWidth="20"
+        className="district"
       />
     </a>
+    
 
     {/* الحي الثامن */}
-    <a href="/hay8">
+    <a href="/hay8">  <title>الحي الثامن</title>
       <polygon
         points="3724,8305,4212,8296,4774,8397,5105,8498,4847,9060,4534,8931,4120,8913,3668,8894"
         fill="transparent"
-        stroke="rgba(0,200,255,.7)"
+        stroke="transparent"
         strokeWidth="20"
+        className="district"
       />
     </a>
+    
   </svg>
 </div>
           </div>

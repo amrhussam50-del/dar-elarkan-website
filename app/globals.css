@@ -34,3 +34,13 @@ body {
   background-size: cover;
   background-position: center;
 }
+.district {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.district:hover {
+  stroke: #ff6b00;
+  stroke-width: 25;
+  fill: rgba(255, 107, 0, 0.15);
+}
