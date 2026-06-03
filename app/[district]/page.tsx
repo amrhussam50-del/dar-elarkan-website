@@ -17,11 +17,12 @@ export default async function DistrictPage({
     };
   
     return (
-        <div className="max-w-5xl mx-auto p-8">
+        <div className="bg-white shadow-xl rounded-2xl p-8 border border-gray-200">
       
-          <h1 className="text-4xl font-bold mb-6 text-center text-blue-900">
-            {districts[district] || district}
-          </h1>
+      <h1 className="text-5xl font-bold text-blue-900 text-center mb-8">
+  {districts[district] || district}
+</h1>
+        
       
          
           {noProjects.includes(district) && (
