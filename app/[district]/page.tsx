@@ -30,7 +30,42 @@ export default async function DistrictPage({
       hay7: "الحي السابع - بيت الوطن",
       hay8: "الحي الثامن - بيت الوطن",
     };
-  
+    const projectDetails: Record<string, any> = {
+        hay1: {
+          downPayment: "30%",
+          installment: "5 سنوات",
+          delivery: "سنة",
+          areas: ["شقة 180م", "شقة 200م", "شقة 220م"]
+        },
+      
+        hay2: {
+          downPayment: "30%",
+          installment: "5 سنوات",
+          delivery: "سنة",
+          areas: ["شقة 190م", "شقة 210م"]
+        },
+      
+        hay4: {
+          downPayment: "30%",
+          installment: "5 سنوات",
+          delivery: "سنة",
+          areas: ["شقة 175م", "شقة 195م"]
+        },
+      
+        hay6: {
+          downPayment: "30%",
+          installment: "5 سنوات",
+          delivery: "سنة",
+          areas: ["شقة 180م", "شقة 230م"]
+        },
+      
+        hay8: {
+          downPayment: "30%",
+          installment: "5 سنوات",
+          delivery: "سنة",
+          areas: ["شقة 185م", "شقة 205م"]
+        }
+      };
     return (
         <div className="bg-white shadow-xl rounded-2xl p-8 border border-gray-200">
       
@@ -65,13 +100,15 @@ export default async function DistrictPage({
 </p>
 
 <div className="mt-4 space-y-2">
-  <p className="text-green-600 font-bold">
-    مقدم 30% وتقسيط حتى 5 سنوات
-  </p>
+<p className="text-green-600 font-bold">
+  مقدم {projectDetails[district].downPayment}
+  {" "}وتقسيط حتى{" "}
+  {projectDetails[district].installment}
+</p>
 
-  <p className="text-gray-700">
-    استلام خلال سنة
-  </p>
+<p className="text-gray-700">
+  استلام خلال {projectDetails[district].delivery}
+</p>
 
   <p className="text-gray-700">
     فيو مفتوح وقريب من جميع الخدمات
