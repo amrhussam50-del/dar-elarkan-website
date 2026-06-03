@@ -1,10 +1,25 @@
+import Image from "next/image"; 
 export default async function DistrictPage({
     params,
   }: {
     params: Promise<{ district: string }>;
   }) {
     const { district } = await params;
-    const noProjects = ["hay3", "hay5", "hay7"];
+    const noProjects = ["hay3", "hay5", "hay7"]; 
+    const projects: Record<string, string> = {
+        hay1: "C87",
+        hay2: "A187",
+        hay4: "A61",
+        hay6: "G30",
+        hay8: "D80",
+      };
+      const projectImages: Record<string, string> = {
+        hay1: "/c87.jpg",
+        hay2: "/a187.jpg",
+        hay4: "/a61.jpg",
+        hay6: "/g30.jpg",
+        hay8: "/d80.jpg",
+      };
     const districts: Record<string, string> = {
       hay1: "الحي الأول - بيت الوطن",
       hay2: "الحي الثاني - بيت الوطن",
@@ -23,7 +38,55 @@ export default async function DistrictPage({
   {districts[district] || district}
 </h1>
         
-      
+{projects[district] && (
+  <div className="bg-blue-50 border border-blue-200 rounded-2xl p-8 mb-10 text-center">
+    <h2 className="text-3xl font-bold text-blue-900 mb-4">
+      المشاريع المتاحة حالياً
+    </h2>
+
+    <Image
+  src={projectImages[district]}
+  alt={projects[district]}
+  width={600}
+  height={400}
+  className="w-full h-64 object-cover rounded-lg mb-4"
+/>
+
+<h3 className="text-3xl font-bold text-blue-800">
+  {projects[district]}
+</h3>
+
+<p className="text-lg text-gray-700 mt-2">
+  {districts[district]}
+</p>
+
+<p className="text-gray-600 mt-3">
+  الشركة المطورة: DAR ELARKAN
+</p>
+
+<div className="mt-4 space-y-2">
+  <p className="text-green-600 font-bold">
+    مقدم 30% وتقسيط حتى 5 سنوات
+  </p>
+
+  <p className="text-gray-700">
+    استلام خلال سنة
+  </p>
+
+  <p className="text-gray-700">
+    فيو مفتوح وقريب من جميع الخدمات
+  </p>
+</div>
+
+      <a
+        href={`https://wa.me/201152722626?text=مرحباً، أريد الاستفسار عن مشروع ${projects[district]}`}
+        target="_blank"
+        className="inline-block mt-5 bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700"
+      >
+        استفسر الآن
+      </a>
+  </div>
+)}
          
           {noProjects.includes(district) && (
            <div className="bg-yellow-50 border border-yellow-300 rounded-2xl p-8 mb-10 text-center">
