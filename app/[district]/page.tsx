@@ -4,7 +4,7 @@ export default async function DistrictPage({
     params: Promise<{ district: string }>;
   }) {
     const { district } = await params;
-  
+    const noProjects = ["hay3", "hay5", "hay7"];
     const districts: Record<string, string> = {
       hay1: "الحي الأول - بيت الوطن",
       hay2: "الحي الثاني - بيت الوطن",
@@ -17,148 +17,84 @@ export default async function DistrictPage({
     };
   
     return (
-      <div
-        style={{
-          minHeight: "100vh",
-          background: "#f8fafc",
-          padding: "40px 20px",
-          direction: "rtl",
-          fontFamily: "Arial, sans-serif",
-        }}
-      >
-        <div
-          style={{
-            maxWidth: "1000px",
-            margin: "0 auto",
-          }}
-        >
-          <div
-            style={{
-              background: "#ffffff",
-              borderRadius: "20px",
-              padding: "40px",
-              boxShadow: "0 10px 30px rgba(0,0,0,0.08)",
-              textAlign: "center",
-            }}
-          >
-            <h1
-              style={{
-                fontSize: "36px",
-                color: "#0f172a",
-                marginBottom: "15px",
-              }}
-            >
-              {districts[district] || district}
-            </h1>
-  
-            <p
-              style={{
-                fontSize: "18px",
-                color: "#64748b",
-                marginBottom: "30px",
-              }}
-            >
-              جميع الأراضي والوحدات المتاحة داخل الحي
-            </p>
-  
-            <div
-              style={{
-                display: "flex",
-                gap: "15px",
-                justifyContent: "center",
-                flexWrap: "wrap",
-                marginBottom: "40px",
-              }}
-            >
-              <a
-                href="https://wa.me/201152722626"
-                target="_blank"
-                style={{
-                  background: "#25D366",
-                  color: "#fff",
-                  padding: "14px 28px",
-                  borderRadius: "12px",
-                  textDecoration: "none",
-                  fontWeight: "bold",
-                }}
-              >
-                تواصل واتساب
-              </a>
-  
-              <a
-                href="tel:01152722626"
-                style={{
-                  background: "#1e3a8a",
-                  color: "#fff",
-                  padding: "14px 28px",
-                  borderRadius: "12px",
-                  textDecoration: "none",
-                  fontWeight: "bold",
-                }}
-              >
-                اتصل الآن
-              </a>
-            </div>
-  
-            <div
-              style={{
-                background: "#f1f5f9",
-                borderRadius: "15px",
-                padding: "25px",
-              }}
-            >
-              <h2
-                style={{
-                  marginBottom: "20px",
-                  color: "#0f172a",
-                }}
-              >
-                الوحدات المتاحة
+        <div className="max-w-5xl mx-auto p-8">
+      
+          <h1 className="text-4xl font-bold mb-6 text-center">
+            {districts[district] || district}
+          </h1>
+      
+          <p className="text-center mb-10">
+            صفحة الحي
+          </p>
+      
+          {noProjects.includes(district) && (
+            <div className="bg-yellow-50 border border-yellow-300 rounded-xl p-6 mb-8 text-center">
+              <h2 className="text-2xl font-bold text-yellow-700 mb-3">
+                لا توجد مشروعات متاحة حالياً
               </h2>
-  
-              <table
-                style={{
-                  width: "100%",
-                  borderCollapse: "collapse",
-                }}
-              >
-                <thead>
-                  <tr
-                    style={{
-                      background: "#1e3a8a",
-                      color: "#fff",
-                    }}
-                  >
-                    <th style={{ padding: "12px" }}>الكود</th>
-                    <th style={{ padding: "12px" }}>المساحة</th>
-                    <th style={{ padding: "12px" }}>السعر</th>
-                    <th style={{ padding: "12px" }}>الحالة</th>
-                  </tr>
-                </thead>
-  
-                <tbody>
-                  <tr>
-                    <td style={{ padding: "12px" }}>A-101</td>
-                    <td style={{ padding: "12px" }}>500 م²</td>
-                    <td style={{ padding: "12px" }}>4,500,000</td>
-                    <td style={{ padding: "12px", color: "green" }}>
-                      متاحة
-                    </td>
-                  </tr>
-  
-                  <tr>
-                    <td style={{ padding: "12px" }}>A-102</td>
-                    <td style={{ padding: "12px" }}>600 م²</td>
-                    <td style={{ padding: "12px" }}>5,200,000</td>
-                    <td style={{ padding: "12px", color: "green" }}>
-                      متاحة
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+      
+              <p className="text-gray-700">
+                اترك بياناتك وسنقوم بالتواصل معك فور إضافة مشروعات جديدة في هذا الحي.
+              </p>
             </div>
-          </div>
+          )}
+      <div className="bg-white shadow-lg rounded-xl p-8 mt-10">
+  <h2 className="text-2xl font-bold mb-6 text-center">
+    اترك استفسارك
+  </h2>
+
+  <form
+  action="https://formsubmit.co/amrhussam50@gmail.com"
+  method="POST"
+  className="space-y-4"
+>
+    <input
+      type="text"
+      placeholder="الاسم بالكامل"
+      className="w-full border rounded-lg p-3"
+    />
+
+    <input
+      type="tel"
+      placeholder="رقم الهاتف"
+      className="w-full border rounded-lg p-3"
+    />
+
+    <input
+      type="email"
+      placeholder="البريد الإلكتروني (اختياري)"
+      className="w-full border rounded-lg p-3"
+    />
+
+    <textarea
+      placeholder="اكتب استفسارك هنا"
+      rows={5}
+      className="w-full border rounded-lg p-3"
+    ></textarea>
+<input
+  type="hidden"
+  name="_subject"
+  value="استفسار جديد من موقع دار الأركان"
+/>
+
+<input
+  type="hidden"
+  name="_captcha"
+  value="false"
+/>
+
+<input
+  type="hidden"
+  name="_next"
+  value="https://4yz4wp-3000.csb.app"
+/>
+    <button
+      type="submit"
+      className="w-full bg-blue-700 text-white py-3 rounded-lg hover:bg-blue-800"
+    >
+      إرسال الاستفسار
+    </button>
+  </form>
+</div>
         </div>
-      </div>
-    );
-  }
+      );
