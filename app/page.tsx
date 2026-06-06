@@ -552,8 +552,7 @@ export default function Home() {
               />
               <svg className="absolute inset-0 w-full h-full" viewBox="0 0 7680 10867" preserveAspectRatio="xMidYMid meet">
                 {MAP_DISTRICTS.map((d) => (
-                  <a key={d.href} href={d.href}>
-                    <title>District {d.label}</title>
+                  <a key={d.href} href={d.href} aria-label={`District ${d.label}`}>
                     <polygon points={d.points}
                       fill="rgba(30,58,95,0)" stroke="rgba(30,58,95,0)" strokeWidth="20"
                       style={{ cursor:"pointer", transition:"fill 0.2s,stroke 0.2s" }}
