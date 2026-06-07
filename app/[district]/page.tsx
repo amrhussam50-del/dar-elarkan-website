@@ -25,7 +25,7 @@ const PROJECT_DATA = {
     downPayment: "30%",
     installment: { ar: "حتى 5 سنوات", en: "Up to 5 years" },
     delivery: { ar: "سنة ونصف", en: "18 months" },
-    areas: { ar: ["شقة 165م²", "شقة 208م²", "شقة 250م²"], en: ["180m² Apt", "200m² Apt", "220m² Apt"] },
+    areas: { ar: ["شقة 180م²", "شقة 200م²", "شقة 220م²"], en: ["180m² Apt", "200m² Apt", "220m² Apt"] },
     features: {
       ar: ["دقيقة من التسعين الشمالي", "دخلة مباشرة من طريق السويس", "مواجهة مباشرة لكمبوند هليو بارك"],
       en: ["1 min from North 90th St", "Direct access from Suez Road", "Facing Helio Park Compound"],
@@ -208,8 +208,21 @@ export default function DistrictPage({ params }) {
     ? "bg-gray-700 border-gray-600 text-white placeholder-gray-400 focus:border-amber-500"
     : "bg-white border-gray-200 text-gray-900 placeholder-gray-400 focus:border-blue-600";
 
-  function handleSubmit(e) {
+  const [submitting, setSubmitting] = useState(false);
+
+  async function handleSubmit(e) {
     e.preventDefault();
+    setSubmitting(true);
+    try {
+      const form = e.target;
+      const data = new FormData(form);
+      await fetch("https://formsubmit.co/ajax/amrhussam50@gmail.com", {
+        method: "POST",
+        headers: { "Accept": "application/json" },
+        body: data,
+      });
+    } catch (_) {}
+    setSubmitting(false);
     setSubmitted(true);
   }
 
@@ -429,14 +442,11 @@ export default function DistrictPage({ params }) {
                 </div>
               ) : (
                 <form
-                  action="https://formsubmit.co/amrhussam50@gmail.com"
-                  method="POST"
                   onSubmit={handleSubmit}
                   className="space-y-4"
                 >
                   <input type="hidden" name="_subject" value="استفسار جديد من موقع دار الأركان" />
                   <input type="hidden" name="_captcha" value="false" />
-                  <input type="hidden" name="_next" value="https://4yz4wp-3000.csb.app" />
 
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
@@ -483,9 +493,9 @@ export default function DistrictPage({ params }) {
                       className={`w-full border rounded-xl px-4 py-3 text-sm outline-none transition-colors resize-none ${input}`} />
                   </div>
 
-                  <button type="submit"
-                    className="w-full bg-blue-900 hover:bg-blue-800 text-white font-bold py-3.5 rounded-xl text-sm transition-all hover:scale-[1.01] shadow-lg shadow-blue-900/20">
-                    {tr.submit}
+                  <button type="submit" disabled={submitting}
+                    className="w-full bg-blue-900 hover:bg-blue-800 disabled:opacity-60 text-white font-bold py-3.5 rounded-xl text-sm transition-all hover:scale-[1.01] shadow-lg shadow-blue-900/20">
+                    {submitting ? "جاري الإرسال..." : tr.submit}
                   </button>
                 </form>
               )}
