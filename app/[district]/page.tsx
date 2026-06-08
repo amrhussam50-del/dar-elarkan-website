@@ -236,7 +236,11 @@ function StatPill({
 }
 
 // ─── MAIN PAGE ────────────────────────────────────────────────────────────────
-export default function DistrictPage({ params }) {
+export default function DistrictPage({
+  params,
+}: {
+  params: { district: string } | Promise<{ district: string }>;
+}) {
   // In Next.js 15 params is a Promise; support both old and new
   const [district, setDistrict] = useState("");
   useEffect(() => {
