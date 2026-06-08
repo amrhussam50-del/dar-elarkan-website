@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 // ─── DATA ─────────────────────────────────────────────────────────────────────
 const DISTRICTS_AR = {
@@ -325,7 +326,6 @@ export default function DistrictPage({ params }) {
             </div>
 
             {/* Back link */}
-
             <Link
               href="/"
               className={`text-sm font-semibold transition-colors hover:text-amber-500 flex items-center gap-1 ${ts}`}
