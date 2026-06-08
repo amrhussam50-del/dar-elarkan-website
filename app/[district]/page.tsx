@@ -1,7 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 
 // ─── DATA ─────────────────────────────────────────────────────────────────────
 const DISTRICTS_AR = {
@@ -193,12 +192,13 @@ const TR = {
 // ─── LOGO ─────────────────────────────────────────────────────────────────────
 function Logo({ size = 44 }) {
   return (
-    <Image
+    <img
       src="/logo.png"
       alt="DAR EL ARKAN"
       width={size}
       height={size}
       className="rounded-lg object-contain flex-shrink-0"
+      style={{ width: size, height: size }}
     />
   );
 }
@@ -290,7 +290,7 @@ export default function DistrictPage({ params }) {
         headers: { Accept: "application/json" },
         body: data,
       });
-    } catch {}
+    } catch (_) {}
     setSubmitting(false);
     setSubmitted(true);
   }
@@ -423,15 +423,13 @@ export default function DistrictPage({ params }) {
                     minHeight: 240,
                   }}
                 >
-                  <Image
+                  <img
                     src={proj.img}
                     alt={proj.code}
                     className="w-full object-cover"
-                    width={900}
-                    height={420}
                     style={{ maxHeight: 420, minHeight: 240 }}
                     onError={(e) => {
-                      e.currentTarget.style.display = "none";
+                      e.target.style.display = "none";
                     }}
                   />
                   {/* gradient overlay */}
@@ -455,14 +453,12 @@ export default function DistrictPage({ params }) {
                         {tr.developer}
                       </p>
                     </div>
-                    <Image
+                    <img
                       src="/logo.png"
                       alt="logo"
                       className="w-14 h-14 rounded-xl object-contain opacity-90"
-                      width={56}
-                      height={56}
                       onError={(e) => {
-                        e.currentTarget.style.display = "none";
+                        e.target.style.display = "none";
                       }}
                     />
                   </div>
