@@ -1,7 +1,6 @@
 "use client";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 
 // ─── DATA ─────────────────────────────────────────────────────────────────────
 const DISTRICTS_AR = {
@@ -191,14 +190,15 @@ const TR = {
 };
 
 // ─── LOGO ─────────────────────────────────────────────────────────────────────
-function Logo({ size = 44 }: { size?: number }) {
+function Logo({ size = 44 }) {
   return (
-    <Image
+    <img
       src="/logo.png"
       alt="DAR EL ARKAN"
       width={size}
       height={size}
       className="rounded-lg object-contain flex-shrink-0"
+      style={{ width: size, height: size }}
     />
   );
 }
@@ -236,18 +236,17 @@ function StatPill({
 }
 
 // ─── MAIN PAGE ────────────────────────────────────────────────────────────────
-export default function DistrictPage({ params }: any) {
-  // In Next.js 15 params is a Promise; support both old and new
+export default function DistrictPage({
+  params,
+}: {
+  params: Promise<{ district: string }>;
+}) {
   const [district, setDistrict] = useState("");
   useEffect(() => {
-    if (params && typeof params.then === "function") {
-      params.then((p) => setDistrict(p.district));
-    } else if (params?.district) {
-      setDistrict(params.district);
-    }
+    params.then((p) => setDistrict(p.district));
   }, [params]);
 
-  const [lang, setLang] = useState("ar");
+  const [lang, setLang] = useState<"ar" | "en">("ar");
   const [dark, setDark] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [formData, setFormData] = useState({
@@ -260,12 +259,12 @@ export default function DistrictPage({ params }: any) {
   const tr = TR[lang];
   const dir = lang === "ar" ? "rtl" : "ltr";
 
-  const proj = PROJECT_DATA[district] || null;
+  const proj = PROJECT_DATA[district as keyof typeof PROJECT_DATA] || null;
   const hasProject = proj !== null && !NO_PROJECTS.includes(district);
   const districtName =
     lang === "ar"
-      ? DISTRICTS_AR[district] || district
-      : DISTRICTS_EN[district] || district;
+      ? DISTRICTS_AR[district as keyof typeof DISTRICTS_AR] || district
+      : DISTRICTS_EN[district as keyof typeof DISTRICTS_EN] || district;
 
   // sync dark mode to html
   useEffect(() => {
@@ -287,11 +286,11 @@ export default function DistrictPage({ params }: any) {
 
   const [submitting, setSubmitting] = useState(false);
 
-  async function handleSubmit(e) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setSubmitting(true);
     try {
-      const form = e.target;
+      const form = e.currentTarget;
       const data = new FormData(form);
       await fetch("https://formsubmit.co/ajax/amrhussam50@gmail.com", {
         method: "POST",
@@ -431,15 +430,13 @@ export default function DistrictPage({ params }: any) {
                     minHeight: 240,
                   }}
                 >
-                  <Image
+                  <img
                     src={proj.img}
                     alt={proj.code}
                     className="w-full object-cover"
-                    width={900}
-                    height={420}
                     style={{ maxHeight: 420, minHeight: 240 }}
                     onError={(e) => {
-                      e.currentTarget.style.display = "none";
+                      (e.target as HTMLImageElement).style.display = "none";
                     }}
                   />
                   {/* gradient overlay */}
@@ -463,14 +460,12 @@ export default function DistrictPage({ params }: any) {
                         {tr.developer}
                       </p>
                     </div>
-                    <Image
+                    <img
                       src="/logo.png"
                       alt="logo"
                       className="w-14 h-14 rounded-xl object-contain opacity-90"
-                      width={56}
-                      height={56}
                       onError={(e) => {
-                        e.currentTarget.style.display = "none";
+                        (e.target as HTMLImageElement).style.display = "none";
                       }}
                     />
                   </div>
